@@ -5,5 +5,5 @@ from django.utils import timezone
 
 class Post(models.Model):
     upload = models.ImageField()
-    cotent = models.TextField()
+    content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)

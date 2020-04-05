@@ -123,6 +123,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AWS_ACCESS_KEY_ID = os.environ.get('FARMA_JAGA_AWS_ACCESS_KEY_ID')

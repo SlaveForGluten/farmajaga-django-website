@@ -120,7 +120,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATICFILES_STORAGE = 'myproject.storage.S3Storage'
+STATICFILES_ROOT = 'http://s3.amazonaws.com/farma-jaga-bucket/static'
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

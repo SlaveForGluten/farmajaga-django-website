@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static 'website/main.css' %}">
+</head>
+<body>
+  {% for post in posts %}
+    <section>
+
+      <div>
+        <img src={{ post.upload.url }} alt="Mountain" width="400"/>
+      </div>
+
+      <article>
+        <small>{{ post.date_posted|date:"d E Y" }}</small>
+        <p>{{ post.content }}</p>
+      </article>
+
+    </section>
+  {% endfor %}
+</body>
+</html>

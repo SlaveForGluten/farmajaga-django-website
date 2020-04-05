@@ -1,14 +1,300 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/farma-jaga-bucket/static/website/main.css">
+  <title>Farma Jaga - Strona domowa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://s3.amazonaws.com/farma-jaga-bucket/static/website/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    /*ALL BELOW - SLIDESHOW BUSINES */
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 900px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active-dot, .dot:hover {
+      background-color: #717171;
+    }
+  </style>
 </head>
+
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link active text-size-nav" href="#">Farma Jaga</a></li> <!-- {% url 'farma_jaga-home/pl' %} -->
+      <li class="nav-item"><a class="nav-link text-size-nav" href="#">Aktualności</a></li>  <!-- {% url 'farma_jaga-news/pl' %} -->
+      <li class="nav-item"><a class="nav-link text-size-nav" href="#">Produkty</a></li>  <!-- {% url 'farma_jaga-products/pl' %} -->
+      <li class="nav-item "><a class="nav-link text-size-nav" href="#">Kontakt</a></li>   <!-- {% url 'farma_jaga-contact/pl' %} -->
+    </ul>
+  </div>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-md-auto">
+      <li class="nav-item">
+        <a class="navbar-item m-2" href="https://www.facebook.com/FarmaJaga/">
+          <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/icons/fb3.png" alt="FB" style="width:26px;height:26px;">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-item m-2" href="https://www.instagram.com/farmajaga/?hl=en">
+          <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/icons/ins2.png" alt="INS" style="width:28px;height:28px;">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-item m-2" href="">  <!-- {% url 'farma_jaga-home/en' %} -->
+          <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/icons/flag-uk-round.png" alt="EN" style="width:24px;height:24px;">
+        </a>
+      </li>
+      <!-- Activate those buttons when GR and ES language version is available    
+      <li class="nav-item">
+        <a class="navbar-item mr-md-2" href="#">
+          <img src="{% static 'farma_jaga/flag-gr-round.png' %}" alt="DE" style="width:16px;height:16px;">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-item mr-md-2" href="#">
+          <img src="{% static 'farma_jaga/flag-sp-round.png' %}" alt="ES" style="width:16px;height:16px;">
+        </a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+
+
 <body>
-    <h1>Welcome to the home page, faggot!</h1>
-    <img src="{% static 'website/pepe.jpg' %}" style="width:100%">
-    <img src="{% static 'website/mad.png' %}" style="width:100%">
+<!-- Slideshow container -->
+<div class="slideshow-container" style="margin-top: 120px">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/home/13.jpg" style="width:100%">
+    <!-- <div class="text">Caption Text</div> -->
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/home/11.jpg" style="width:100%">
+    <!-- <div class="text">Caption Two</div> -->
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/home/25.jpg" style="width:100%">
+    <!-- <div class="text">Caption Three</div> -->
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/home/34.jpg" style="width:100%">
+    <!-- <div class="text">Caption Three</div> -->
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/home/bella.jpg" style="width:100%">
+    <!-- <div class="text">Caption Three</div> -->
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/home/jesien.jpg" style="width:100%">
+    <!-- div class="text">Caption Three</div> -->
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+</div>
+
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active-dot", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active-dot";
+  }
+</script>
+
+<section style="margin-top: 60px">
+  <article class="flex-container-2" style="padding: 40px">
+    <h1>O nas:</h1>
+    <p>Farma Jaga to rodzinne gospodarstwo ekologiczne zajmujące się hodowlą kóz i produkcją kozich serów. Sprzedaż prowadzimy w ramach rolniczego handlu detalicznego. Od samego początku filozofia naszej działalności opiera się na dwóch głównych filarach: miłości do zwierząt oraz jak najwyższej jakości oferowanych produktów. Nasze kozy mają dostęp jedynie do zdrowego, naturalnego i ekologicznego jedzenia - w myśl zasady: ,,Szczęśliwe kozy dają doskonałe mleko". Zrezygnowaliśmy również z udziału jakichkolwiek pośredników przy dystrybucji produktów - nasze sery można kupić wyłącznie od nas. Pozwala nam to zachować całkowitą kontrolę nad jakością i ceną.</p>
+    <p>Początek naszej działalności to rok 2011. Wtedy to, zmęczeni miejskim zgiełkiem, postanowiliśmy poszukać lepszego miejsca do życia. I znaleźliśmy - opuszczone gospodarstwo w Zakamieniu niedaleko Pińczowa. To cichy i spokojny zakątek leżący na terenie Natura 2000 w bezpośrednim sąsiedztwie Rezerwatu przyrody Pieczyska - idealne miejsce do życia i pracy. W 2012 roku pojawiły się u nas pierwsze kozy i ruszyliśmy z produkcją serów.</p>
+    <p>Hodowla kóz i serowarstwo to w naszym przypadku kontynuacja rodzinnych tradycji. Zajmowały się tym babcia i prababcia. Dzięki nim mieliśmy dostęp do starych, sprawdzonych receptur. To, plus odrobina talentu i mnóstwo pasji, pozwoliły nam w krótkim czasie wyrobić sobie ugruntowaną pozycję najpierw na świętokrzyskim, a potem na krajowym rynku zdrowej żywności.</p>
+  </article>
+  <div class="flex-container-1" style="padding: 20px">
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/home/hura.jpg" alt="Mountain" width="800">
+  </div>
+</section>
+
+<h1 style="text-align:center; margin-top: 60px">Awards:</h1>
+
+<section style="margin-top: 60px">
+  <div class="flex-container-1">
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/awards/2014.jpg" class="mx-auto d-block" alt="Mountain" width="100">
+    <article class="flex-container-2" style="padding: 20px">
+      <p><b>Czerwiec 2014</b> - po raz pierwszy zgłosiliśmy nasz ser do konkursu "Smaki regionów" organizowanego pod patronatem Urzędu Marszałkowskiego w Kielcach i od razu zdobyliśmy pierwszą nagrodę. </p>
+    </article>
+  </div>
+  <div class="flex-container-1 ">
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/awards/dziedzictwo2.jpg" class="mx-auto d-block" alt="Mountain" width="100">
+    <article class="flex-container-2" style="padding: 20px">
+      <p><b>Czerwiec 2014</b> - zostaliśmy wyróżnieni przyłączeniem do sieci Dziedzictwa Kulinarnego Świętokrzyskie w ramach Europejskiej Sieci Regionalnego Dziedzictwa Kulinarnego.</p>
+    </article>
+  </div>
+  <div class="flex-container-1 ">
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/awards/perla3.jpg" class="mx-auto d-block" alt="Mountain" width="100">
+   <article class="flex-container-2" style="padding: 20px">
+      <p><b>Wrzesień 2015</b> - zostaliśmy uhonorowani "Perłą 2015"- nagrodą dla najlepszego polskiego regionalnego produktu żywnościowego. </p>
+    </article>
+  </div>
+  <div class="flex-container-1 ">
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/awards/2016.jpg" class="mx-auto d-block" alt="Mountain" width="100">
+      <article class="flex-container-2" style="padding: 20px">
+      <p><b>Czerwiec 2016</b> - kolejny nasz ser zwycięża w kieleckim konkursie "Smaki Regionów". </p>
+    </article>
+  </div>
+</section>
+
+<section >
+  <div class="flex-container-1">
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/awards/medal.jpg" class="mx-auto d-block" alt="Mountain" width="100">
+    <article class="flex-container-2" style="padding: 20px">
+      <p><b>Sierpień 2016</b> - zostaliśmy odznaczeni przez Ministra Rolnictwa medalem "Zasłużony dla rolnictwa". </p>
+    </article>
+  </div>
+  <div class="flex-container-1 ">
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/awards/eko.jpg" class="mx-auto d-block" alt="Mountain" width="100">
+    <article class="flex-container-2" style="padding: 20px">
+      <p><b>Wrzesień 2016</b> - zostaliśmy wybrani najlepszym gospodarstwem ekologicznym w województwie świętokrzyskim.</p>
+    </article>
+  </div>
+  <div class="flex-container-1 ">
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/awards/2017.jpg" class="mx-auto d-block" alt="Mountain" width="100">
+    <article class="flex-container-2" style="padding: 20px">
+      <p><b>Czerwiec 2017</b> - kolejna pierwsza nagroda w konkursie "Smaki Regionów".</p>
+    </article>
+  </div>
+  <div class="flex-container-1 ">
+    <img src="http://s3.amazonaws.com/farma-jaga-bucket/static/website/images/awards/fnfm.jpg" class="mx-auto d-block" alt="Mountain" width="100">
+      <article class="flex-container-2" style="padding: 20px">
+      <p><b>Czerwiec 2018</b> - pierwsze miejsce w kategorii serów świeżych w konkursie Polish Cheese Awards Grand Prix 2018 w Sandomierzu. </p>
+    </article>
+  </div>
+</section>
+
+<footer class="bg-dark " >© Prawa autorskie - Farma Jaga
+  <br />Wykonanie strony: Aleksander Pietrasiewicz,  alegzanderr@gmail.com
+</footer>
+
 </body>
 </html>

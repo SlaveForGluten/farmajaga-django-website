@@ -3,7 +3,8 @@ from django.views.generic import ListView
 from .models import Post
 import os
 
-MAP = os.environ.get('FARMA_JAGA_MAP')
+MAP = 'JHGKUTFTYFTFITFTFTFUTFJKRDR6D'
+#os.environ.get('FARMA_JAGA_MAP')
 
 
 # links to Polish version of the site-------------------------

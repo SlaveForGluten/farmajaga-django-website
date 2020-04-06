@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from .models import Post
+import os
+
+MAP = os.environ.get('FARMA_JAGA_MAP')
 
 
 # links to Polish version of the site-------------------------
@@ -17,7 +20,7 @@ class NewsListPL(ListView):
 
 
 def contact_pl(request):
-    return render(request, 'website/pl/contact.html', {'title': 'Kontakt'})
+    return render(request, 'website/pl/contact.html', {'map': MAP})
 
 
 def products_pl(request):
@@ -38,7 +41,7 @@ class NewsListEN(ListView):
 
 
 def contact_en(request):
-    return render(request, 'website/en/contact.html', {'title': 'Contact'})
+    return render(request, 'website/en/contact.html', {'map': MAP})
 
 
 def products_en(request):

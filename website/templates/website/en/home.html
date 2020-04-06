@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Farma Jaga - Strona domowa</title>
+  <title>Farma Jaga - Home page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -98,10 +98,18 @@
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item"><a class="nav-link active text-size-nav" href="{% url 'farma_jaga-home/pl' %}">Farma Jaga</a></li> 
-      <li class="nav-item"><a class="nav-link text-size-nav" href="{% url 'farma_jaga-news/pl' %}">Aktualności</a></li>  
-      <li class="nav-item"><a class="nav-link text-size-nav" href="{% url 'farma_jaga-products/pl' %}">Produkty</a></li>  
-      <li class="nav-item "><a class="nav-link text-size-nav" href="{% url 'farma_jaga-contact/pl' %}">Kontakt</a></li>  
+      <li class="nav-item">
+        <a class="nav-link active text-size-nav" href="{% url 'farma_jaga-home/en' %}">Farma Jaga</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-size-nav" href="{% url 'farma_jaga-news/en' %}">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-size-nav" href="{% url 'farma_jaga-products/en' %}">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-size-nav" href="{% url 'farma_jaga-contact/en' %}">Contact</a>
+      </li>   
     </ul>
   </div>
 
@@ -118,8 +126,8 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="navbar-item m-2" href="#">  
-          <img src="{% static 'website/images/icons/flag-uk-round.png' %}" alt="EN" style="width:24px;height:24px;">
+        <a class="navbar-item m-2" href="{% url 'farma_jaga-home/pl' %}">
+          <img src="{% static 'website/images/icons/flag-pl-round.png' %}" alt="PL" style="width:24px;height:24px;">
         </a>
       </li>
       <!-- Activate those buttons when GR and ES language version is available    
@@ -226,41 +234,42 @@
 
 <section style="margin-top: 60px">
   <article class="flex-container-2" style="padding: 40px">
-    <h1>O nas:</h1>
-    <p>Farma Jaga to rodzinne gospodarstwo ekologiczne zajmujące się hodowlą kóz i produkcją kozich serów. Sprzedaż prowadzimy w ramach rolniczego handlu detalicznego. Od samego początku filozofia naszej działalności opiera się na dwóch głównych filarach: miłości do zwierząt oraz jak najwyższej jakości oferowanych produktów. Nasze kozy mają dostęp jedynie do zdrowego, naturalnego i ekologicznego jedzenia - w myśl zasady: ,,Szczęśliwe kozy dają doskonałe mleko". Zrezygnowaliśmy również z udziału jakichkolwiek pośredników przy dystrybucji produktów - nasze sery można kupić wyłącznie od nas. Pozwala nam to zachować całkowitą kontrolę nad jakością i ceną.</p>
-    <p>Początek naszej działalności to rok 2011. Wtedy to, zmęczeni miejskim zgiełkiem, postanowiliśmy poszukać lepszego miejsca do życia. I znaleźliśmy - opuszczone gospodarstwo w Zakamieniu niedaleko Pińczowa. To cichy i spokojny zakątek leżący na terenie Natura 2000 w bezpośrednim sąsiedztwie Rezerwatu przyrody Pieczyska - idealne miejsce do życia i pracy. W 2012 roku pojawiły się u nas pierwsze kozy i ruszyliśmy z produkcją serów.</p>
-    <p>Hodowla kóz i serowarstwo to w naszym przypadku kontynuacja rodzinnych tradycji. Zajmowały się tym babcia i prababcia. Dzięki nim mieliśmy dostęp do starych, sprawdzonych receptur. To, plus odrobina talentu i mnóstwo pasji, pozwoliły nam w krótkim czasie wyrobić sobie ugruntowaną pozycję najpierw na świętokrzyskim, a potem na krajowym rynku zdrowej żywności.</p>
+    <h1>About us:</h1>
+    <p>Jaga Farm is a family-run, ecological farm dealing in goat breeding and production of goat's cheese. We sell 
+    as part of agricultural retail trade. From the very beginning, our business philosophy has been based on two main pillars: love for animals and the highest quality of offered products. Our goats have access only to healthy, natural and organic food - according to the principle: "Happy goats give excellent milk". We have also given up the participation of any middlemen in the distribution of our products - our cheeses can only be bought from us. This allows us to maintain total control over quality and price.</p>
+    <p>Our activity began on 2011. When tired of the hustle and bustle of the city, we decided to look for a better place to live. And we found - an abandoned farm in Zakamień near Pińczów. It is a quiet and peaceful refuge located within Natura 2000 in the immediate vicinity of the Pieczyska Nature Reserve - an ideal place to live and work. In 2012, the first goats appeared and we started to produce cheese.</p>
+    <p>Goat breeding and cheese making are in our case a continuation of family tradition. Started by our grandmother and great-grandmother during harsh post-war times, was a way to make ends meet. Thanks to them we had access to old, tested recipes. This, plus a bit of talent and a lot of passion, allowed us to quickly establish a solid position first in Świętokrzyskie, and then on the domestic healthy food market.</p>
   </article>
   <div class="flex-container-1" style="padding: 20px">
     <img src="{% static 'website/images/home/hura.jpg' %}" alt="Mountain" width="800">
   </div>
 </section>
 
-<h1 style="text-align:center; margin-top: 60px">Wyróżnienia:</h1>
+<h1 style="text-align:center; margin-top: 60px">Awards:</h1>
 
 <section style="margin-top: 60px">
   <div class="flex-container-1">
     <img src="{% static 'website/images/awards/2014.jpg' %}" class="mx-auto d-block" alt="Mountain" width="100">
     <article class="flex-container-2" style="padding: 20px">
-      <p><b>Czerwiec 2014</b> - po raz pierwszy zgłosiliśmy nasz ser do konkursu "Smaki regionów" organizowanego pod patronatem Urzędu Marszałkowskiego w Kielcach i od razu zdobyliśmy pierwszą nagrodę. </p>
+      <p><b>June 2014</b> - for the first time we submitted our cheese to the "Tastes of the Regions" competition organized under the auspices of the Marshal Office in Kielce and we won the first prize.</p>
     </article>
   </div>
   <div class="flex-container-1 ">
     <img src="{% static 'website/images/awards/dziedzictwo2.jpg' %}" class="mx-auto d-block" alt="Mountain" width="100">
     <article class="flex-container-2" style="padding: 20px">
-      <p><b>Czerwiec 2014</b> - zostaliśmy wyróżnieni przyłączeniem do sieci Dziedzictwa Kulinarnego Świętokrzyskie w ramach Europejskiej Sieci Regionalnego Dziedzictwa Kulinarnego.</p>
+      <p><b>June 2014</b> - we have been awarded Incorporation to the Culinary Heritage Świętokrzyskie network as part of the European Network of Regional Culinary Heritage.</p>
     </article>
   </div>
   <div class="flex-container-1 ">
     <img src="{% static 'website/images/awards/perla3.jpg' %}" class="mx-auto d-block" alt="Mountain" width="100">
-   <article class="flex-container-2" style="padding: 20px">
-      <p><b>Wrzesień 2015</b> - zostaliśmy uhonorowani "Perłą 2015"- nagrodą dla najlepszego polskiego regionalnego produktu żywnościowego. </p>
+    <article class="flex-container-2" style="padding: 20px">
+      <p><b>September 2015</b> - we were honored with the "Pearl of 2015" - award for the best Polish regional food product.</p>
     </article>
   </div>
   <div class="flex-container-1 ">
     <img src="{% static 'website/images/awards/2016.jpg' %}" class="mx-auto d-block" alt="Mountain" width="100">
       <article class="flex-container-2" style="padding: 20px">
-      <p><b>Czerwiec 2016</b> - kolejny nasz ser zwycięża w kieleckim konkursie "Smaki Regionów". </p>
+      <p><b>June 2016</b> - our cheese won the Kielce "Tastes of the Regions" competition again.</p>
     </article>
   </div>
 </section>
@@ -269,32 +278,33 @@
   <div class="flex-container-1">
     <img src="{% static 'website/images/awards/medal.jpg' %}" class="mx-auto d-block" alt="Mountain" width="100">
     <article class="flex-container-2" style="padding: 20px">
-      <p><b>Sierpień 2016</b> - zostaliśmy odznaczeni przez Ministra Rolnictwa medalem "Zasłużony dla rolnictwa". </p>
+      <p><b>August 2016</b> - we have been awarded by the Minister of Agriculture with the medal "Distinguished for Agriculture".</p>
     </article>
   </div>
   <div class="flex-container-1 ">
     <img src="{% static 'website/images/awards/eko.jpg' %}" class="mx-auto d-block" alt="Mountain" width="100">
     <article class="flex-container-2" style="padding: 20px">
-      <p><b>Wrzesień 2016</b> - zostaliśmy wybrani najlepszym gospodarstwem ekologicznym w województwie świętokrzyskim.</p>
+      <p><b>September 2016</b> - we were chosen the best Organic Farm in the Świętokrzyskie Voivodship.</p>
     </article>
   </div>
   <div class="flex-container-1 ">
     <img src="{% static 'website/images/awards/2017.jpg' %}" class="mx-auto d-block" alt="Mountain" width="100">
     <article class="flex-container-2" style="padding: 20px">
-      <p><b>Czerwiec 2017</b> - kolejna pierwsza nagroda w konkursie "Smaki Regionów".</p>
+      <p><b>June 2017</b> - another first prize in the "Tastes of the Regions" competition.</p>
     </article>
   </div>
   <div class="flex-container-1 ">
     <img src="{% static 'website/images/awards/fnfm.jpg' %}" class="mx-auto d-block" alt="Mountain" width="100">
       <article class="flex-container-2" style="padding: 20px">
-      <p><b>Czerwiec 2018</b> - pierwsze miejsce w kategorii serów świeżych w konkursie Polish Cheese Awards Grand Prix 2018 w Sandomierzu. </p>
+      <p><b>June 2018</b> - first place in the fresh cheese category at the Polish Cheese Awards Grand Prix 2018 in Sandomierz.</p>
     </article>
   </div>
 </section>
 
-<footer class="bg-dark " >© Prawa autorskie - Farma Jaga
-  <br />Wykonanie strony: Aleksander Pietrasiewicz,  alegzanderr@gmail.com
+<footer class="bg-dark">© Copyright - Farma Jaga
+  <br />Website by: Aleksander Pietrasiewicz,  alegzanderr@gmail.com
 </footer>
 
 </body>
 </html>
+

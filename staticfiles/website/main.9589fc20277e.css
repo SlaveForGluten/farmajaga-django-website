@@ -1,0 +1,52 @@
+body {
+  background: #FAF0E6;
+  color: #333333;
+  margin-top: 3rem;
+}
+
+a, p, footer, b, h1{
+  font-family: Helvetica
+}
+
+footer {
+  position: relative; 
+  text-align: center;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Responsive layout - on smaller screens makes the content 
+(inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 500px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*size of top menu font */
+.text-size-nav {
+  font-size: 20px;
+}
+
+.flex-container-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.flex-container-2 {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}

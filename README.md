@@ -1,6 +1,6 @@
 # farmajaga-django-website
 
-visit at: https://farmajaga.com/en/
+Visit at: https://farmajaga.com/en/ .
 I wanted to have a fully functional website online and learn what's there to learn about creating and deploying one.
 For this project I used:
 - Django
